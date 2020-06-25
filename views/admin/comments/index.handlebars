@@ -1,0 +1,36 @@
+<div class="container">
+
+<div class="jumbotron">
+<h1 class="display-4">Comments</h1>
+</div>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Status</th>
+        <th scope="col">Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each comments}}
+
+    <tr>
+        <td>{{id}}</td>
+        <td>{{user.firstName}}</td>
+
+        <td><input data-id="{{id}}" {{#if approveComment}} checked {{/if}} type="checkbox" name="approveComment"></td>
+        <td>{{generateTime date 'Do MMMM YYYY'}}</td>
+        <td>
+        <form action="/admin/comments/delete/{{id}}?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        </td>
+    </tr>
+
+    {{/each}}
+    </tbody>
+</table>
+
+</div>

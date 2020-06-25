@@ -1,0 +1,23 @@
+<div class="container">
+
+<div class="row">
+
+    <div class="col-lg-8">
+        <div class="jumbotron">
+        <h3 class="display-4">Edit Categories</h3>
+        </div>
+
+        <form action="/admin/categories/edit/{{category.id}}?_method=PUT" method="post">
+
+            <div class="formgroup">
+                <label for="name">Name</label>
+                <input type="text" value="{{category.name}}" name="name" placeholder="Enter title" class="form-control">
+            </div>
+
+            <button style="margin-top: 15px" class="btn btn-outline-dark" type="submit">Update Category</button>
+        </form>
+    </div>
+
+</div>
+
+</div>

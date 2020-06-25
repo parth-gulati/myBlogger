@@ -1,0 +1,54 @@
+<div class="container">
+<div class="jumbotron">
+<div class="row">
+
+    <div class="col-sm-4">
+        <h3 class="display-4">Create Category</h3>
+        <br>
+
+        <form action="/admin/categories/create" method="post">
+
+            <div class="formgroup">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter title" class="form-control">
+            </div>
+            <br>
+            <button style="margin-top: 15px" class="btn btn-outline-dark" type="submit">Create Category</button>
+
+        </form>
+    </div>
+
+    <div class="col-sm-8">
+        <div class="text-center">
+            <h3 class="display-4">Show Categories</h3>
+        <br>
+            <table class="table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each categories}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td><a href="/admin/categories/edit/{{id}}" class="btn btn-outline-info">Edit</a></td>
+                <td>
+                    <form action="/admin/categories/delete/{{id}}?_method=DELETE" method="post">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+
+                </td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>

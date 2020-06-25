@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MyBlogger | Create your own blogs </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/blog-home.css" rel="stylesheet">
+
+    <!--Custom styles for individual posts-->
+    <link href="/css/blog-post.css" rel="stylesheet">
+
+    <style>
+        a{
+            transition: 0.25s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+{{> home/home-nav}}
+
+<!-- Page Content -->
+<div class="container">
+
+    {{#if errors}}
+
+        {{#each errors}}
+
+            <div class="alert alert-danger">
+
+                {{message}}
+
+
+            </div>
+
+        {{/each}}
+
+
+    {{/if}}
+
+    {{> home/form-msgs}}
+
+    {{{body}}}
+
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+{{>home/footer}}
+
+<!-- Bootstrap core JavaScript -->
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

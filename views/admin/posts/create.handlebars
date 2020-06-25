@@ -1,0 +1,53 @@
+<div class="container">
+<div class="jumbotron">
+<h1 class="display-4">Create Post </h1>
+</div>
+
+
+<form action="/admin/posts/create" method="post" enctype="multipart/form-data">
+
+    <div class = "form-group">
+        <label for="title">Title</label>
+        <input required name="title" type="text" class="form-control" id="title" placeholder="Enter title" required>
+    </div>
+    <div class = "form-group">
+        <label for="file">File Upload</label>
+        <input required name="file" type="file" class="form-control-file" id="file" required>
+    </div>
+    <div class="form-group">
+    <label for="status"> Status </label>
+    <select name = "status" id="status" class="form-control">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+        <option value="draft">Draft</option>
+    </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="category"> Category </label>
+        <select name = "category" id="category" class="form-control">
+            {{#each categories}}
+
+                <option value="{{id}}">{{name}}</option>
+
+            {{/each}}
+        </select>
+    </div>
+
+    <div class="form-check" style="padding-left: 20px">
+
+        <input name="allowComments" type="checkbox" class="form-check-input" id="allowComments">
+        <label for="allowComments">Allow Comments </label>
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body</label>
+        <textarea required name="body" cols="30" rows="10" type="text" class="form-control" id="body" placeholder="Start typing"></textarea>
+    </div>
+
+    <button class="btn-outline-dark btn" type="submit">Create Post</button>
+
+</form>
+
+</div>
